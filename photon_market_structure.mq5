@@ -102,7 +102,7 @@ int get_trend_100() {
             
          } else {       // continuing bearish or BOS occured
             
-            if (pullback_lower_high != lower_high) {     // BOS
+            if (pullback_lower_high != lower_low) {     // BOS
             
                if (high > pullback_lower_high) {
                   lower_high = high;
