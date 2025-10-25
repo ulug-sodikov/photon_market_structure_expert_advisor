@@ -36,8 +36,9 @@ int get_trend_100() {
       low = iLow(symbol, timeframe, i);
       
       if (trend_100 == 1) {            // in bullish trend
-         
+      
          if (high < higher_high) {     // pullback
+         
             if (low < higher_low) {    // change of charackter
                Print("low ", low, " of ", iTime(symbol, timeframe, i), " break higher low ", higher_low);
                Print("trend switched bearish");
@@ -49,8 +50,6 @@ int get_trend_100() {
                lower_low = low;
                lower_high = higher_high;
                pullback_lower_high = low;
-               
-               
                
             } else {
                if (low < pullback_higher_low) {
@@ -71,17 +70,16 @@ int get_trend_100() {
                Print("Bullish break of structure at ", iTime(symbol, timeframe, i));
                Print("New higher low is ", higher_low);
                Print("-----------");
-               
             }
             
             higher_high = high;
-            
             pullback_higher_low = high;
          }         
          
       } else {          // in bearish trend
 
          if (low > lower_low) {        // pullback
+         
             if (high > lower_high) {   // change of character
                Print("high ", high, " of ", iTime(symbol, timeframe, i), " break lower high ", lower_high);
                Print("trend switched bullish");
